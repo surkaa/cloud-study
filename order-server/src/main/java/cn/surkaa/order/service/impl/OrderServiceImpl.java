@@ -1,6 +1,8 @@
 package cn.surkaa.order.service.impl;
 
 import cn.surkaa.order.domain.Order;
+import cn.surkaa.util.exception.CloudException;
+import cn.surkaa.util.exception.NoFoundException;
 import cn.surkaa.util.vo.OrderWithUserVO;
 import cn.surkaa.util.vo.UserVO;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -28,6 +30,9 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order>
     @Override
     public OrderWithUserVO getOrderWithUser(long id) {
         Order byId = this.getById(id);
+        if (null == byId) {
+            throw NoFoundException.error();
+        }
         String url = "http://localhost:8080/users" + byId.getUserId();
         UserVO userVO = restTemplate.getForObject(url, UserVO.class);
         OrderWithUserVO orderWithUserVO = new OrderWithUserVO();
