@@ -13,7 +13,7 @@ import java.util.Date;
 public class OrderWithUserVO {
 
     private Long id;
-    private Long userId;
+    // private Long userId;
     private Long totalPrice;
     private Integer orderStatus;
     private Date createdTime;
