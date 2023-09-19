@@ -1,5 +1,6 @@
 package cn.surkaa.user.service.impl;
 
+import cn.surkaa.util.vo.UserVO;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import cn.surkaa.user.domain.User;
 import cn.surkaa.user.service.UserService;
@@ -15,6 +16,25 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         implements UserService {
 
+    @Override
+    public UserVO getSafeUserById(long id) {
+        User byId = this.getById(id);
+        UserVO safeUserVO = new UserVO();
+        safeUserVO.setId(byId.getId());
+        safeUserVO.setUsername(byId.getUsername());
+        safeUserVO.setNickname(byId.getNickname());
+        safeUserVO.setAvatar(byId.getAvatar());
+        safeUserVO.setGender(byId.getGender());
+        safeUserVO.setPhone(byId.getPhone());
+        safeUserVO.setEmail(byId.getEmail());
+        safeUserVO.setAge(byId.getAge());
+        safeUserVO.setRole(byId.getRole());
+        safeUserVO.setUserStatus(byId.getUserStatus());
+        safeUserVO.setCreateTime(byId.getCreateTime());
+        safeUserVO.setUpdateTime(byId.getUpdateTime());
+        safeUserVO.setIsDelete(byId.getIsDelete());
+        return safeUserVO;
+    }
 }
 
 
