@@ -7,7 +7,7 @@ import cn.surkaa.util.vo.BaseVO;
  * @author SurKaa
  * Created with IntelliJ IDEA.
  */
-public class Result {
+public class ResultUtil {
 
     public static final int SUCCESS_CODE = CloudError.SUCCESS.getCode();
 
