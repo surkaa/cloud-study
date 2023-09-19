@@ -13,6 +13,7 @@
     <modules>
         <module>user-server</module>
         <module>order-server</module>
+        <module>util</module>
     </modules>
 
     <parent>
@@ -31,7 +32,7 @@
 
         <!-- dependency version -->
         <mybatis-plus.version>3.5.3.1</mybatis-plus.version>
-        <hutool.version>5.8.18</hutool.version>
+        <hutool.version>5.8.20</hutool.version>
     </properties>
 
     <dependencyManagement>
@@ -41,11 +42,6 @@
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
-            <dependency>
-                <groupId>cn.hutool</groupId>
-                <artifactId>hutool-all</artifactId>
-                <version>${hutool.version}</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -53,6 +49,11 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
         </dependency>
     </dependencies>
 
