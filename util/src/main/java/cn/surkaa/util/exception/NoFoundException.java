@@ -15,7 +15,7 @@ public class NoFoundException extends CloudException {
         super(message, code, description);
     }
 
-    public NoFoundException error(String description) {
+    public static NoFoundException error(String description) {
         return new NoFoundException(
                 CloudError.NO_FOUND.getMessage(),
                 CloudError.NO_FOUND.getCode(),
@@ -23,7 +23,7 @@ public class NoFoundException extends CloudException {
         );
     }
 
-    public NoFoundException error() {
-        return this.error("");
+    public static NoFoundException error() {
+        return error("");
     }
 }
