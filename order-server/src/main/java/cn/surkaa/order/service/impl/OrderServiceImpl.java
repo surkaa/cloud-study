@@ -33,7 +33,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order>
         if (null == byId) {
             throw NoFoundException.error();
         }
-        String url = "http://localhost:8081/users/" + byId.getUserId();
+        String url = "http://user-server/users/" + byId.getUserId();
         UserVO userVO = restTemplate.getForObject(url, UserVO.class);
         OrderWithUserVO orderWithUserVO = new OrderWithUserVO();
         orderWithUserVO.setId(byId.getId());
