@@ -26,14 +26,14 @@ public class BeanRegister {
         return new RestTemplate();
     }
 
-    /**
-     * Ribbon负载均衡策略
-     *
-     * @return RandomRule 随机策略
-     */
-    @Bean
-    public IRule ribbonRule() {
-        return new RandomRule();
-    }
+//    /**
+//     * Ribbon负载均衡策略
+//     *
+//     * @return RandomRule 随机策略
+//     */
+//    @Bean
+//    public IRule ribbonRule() {
+//        return new RandomRule();
+//    }
 
 }
