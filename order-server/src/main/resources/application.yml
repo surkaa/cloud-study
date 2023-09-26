@@ -38,4 +38,4 @@ ribbon:
 user-server:
   ribbon:
     # 配置负载均衡策略
-    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule

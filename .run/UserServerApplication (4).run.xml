@@ -1,9 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="UserServerApplication (2)" type="SpringBootApplicationConfigurationType"
+    <configuration default="false" name="UserServerApplication (4)" type="SpringBootApplicationConfigurationType"
                    factoryName="Spring Boot">
         <module name="user-server"/>
         <option name="PROGRAM_PARAMETERS"
-                value="--server.port=8082 --spring.cloud.nacos.discovery.cluster-name=BeiJing"/>
+                value="--server.port=8084 --spring.cloud.nacos.discovery.cluster-name=HangZhou"/>
         <option name="SPRING_BOOT_MAIN_CLASS" value="cn.surkaa.user.UserServerApplication"/>
         <extension name="coverage">
             <pattern>
