@@ -26,3 +26,9 @@ mybatis-plus:
 logging:
   level:
     cn.surkaa: debug
+ribbon:
+  eager-load:
+    # 开启饿汉模式
+    enabled: true
+    # 配置需要提前加载的服务
+    clients: user-server
