@@ -9,12 +9,15 @@ spring:
     password: 123456
     url: jdbc:mysql://localhost:3306/db_cloud_user_server
     driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      server-addr: localhost:8848
 
-eureka:
-  client:
-    service-url:
-      # eureka服务端地址
-      defaultZone: http://localhost:10001/eureka/
+#eureka:
+#  client:
+#    service-url:
+#      # eureka服务端地址
+#      defaultZone: http://localhost:10001/eureka/
 
 mybatis-plus:
   global-config:
