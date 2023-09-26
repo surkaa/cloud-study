@@ -16,6 +16,14 @@ spring:
         # 是否临时实例 这将会让此服务的健康状况由nacos主动监测
         ephemeral: false
 
+feign:
+  client:
+    config:
+      #
+      default:
+        # 开启feign的日志
+        loggerLevel: full
+
 #eureka:
 #  client:
 #    service-url:

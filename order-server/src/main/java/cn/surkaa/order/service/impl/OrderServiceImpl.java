@@ -1,14 +1,13 @@
 package cn.surkaa.order.service.impl;
 
+import cn.surkaa.order.client.UserClients;
 import cn.surkaa.order.domain.Order;
-import cn.surkaa.util.exception.CloudException;
 import cn.surkaa.util.exception.NoFoundException;
 import cn.surkaa.util.vo.OrderWithUserVO;
 import cn.surkaa.util.vo.UserVO;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import cn.surkaa.order.service.OrderService;
 import cn.surkaa.order.mapper.OrderMapper;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -21,10 +20,10 @@ import org.springframework.web.client.RestTemplate;
 public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order>
         implements OrderService {
 
-    private final RestTemplate restTemplate;
+    private final UserClients userClients;
 
-    public OrderServiceImpl(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
+    public OrderServiceImpl(UserClients userClients) {
+        this.userClients = userClients;
     }
 
     @Override
@@ -33,8 +32,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order>
         if (null == byId) {
             throw NoFoundException.error();
         }
-        String url = "http://user-server/users/" + byId.getUserId();
-        UserVO userVO = restTemplate.getForObject(url, UserVO.class);
+        UserVO userVO = userClients.getUserById(byId.getUserId());
         OrderWithUserVO orderWithUserVO = new OrderWithUserVO();
         orderWithUserVO.setId(byId.getId());
         orderWithUserVO.setTotalPrice(byId.getTotalPrice());
