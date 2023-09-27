@@ -15,6 +15,7 @@
         <module>order-server</module>
         <module>util</module>
         <module>eureka-server</module>
+        <module>feign-api</module>
     </modules>
 
     <packaging>pom</packaging>

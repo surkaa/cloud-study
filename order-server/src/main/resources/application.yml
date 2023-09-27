@@ -17,12 +17,6 @@ spring:
         ephemeral: false
 
 feign:
-  client:
-    config:
-      #
-      default:
-        # 开启feign的日志
-        loggerLevel: basic
   httpclient:
     # 支持httpclient
     enabled: true

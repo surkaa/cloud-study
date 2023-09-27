@@ -1,6 +1,6 @@
-package cn.surkaa.order.client;
+package cn.surkaa.feign.client;
 
-import cn.surkaa.util.vo.UserVO;
+import cn.surkaa.feign.pojo.UserVO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

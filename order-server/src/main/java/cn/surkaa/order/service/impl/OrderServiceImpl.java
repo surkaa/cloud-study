@@ -1,15 +1,16 @@
 package cn.surkaa.order.service.impl;
 
-import cn.surkaa.order.client.UserClients;
+import cn.surkaa.feign.config.FeignConfiguration;
+import cn.surkaa.feign.client.UserClients;
+import cn.surkaa.feign.pojo.OrderWithUserVO;
+import cn.surkaa.feign.pojo.UserVO;
 import cn.surkaa.order.domain.Order;
 import cn.surkaa.util.exception.NoFoundException;
-import cn.surkaa.util.vo.OrderWithUserVO;
-import cn.surkaa.util.vo.UserVO;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import cn.surkaa.order.service.OrderService;
 import cn.surkaa.order.mapper.OrderMapper;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 /**
  * @author SurKaa
@@ -17,6 +18,10 @@ import org.springframework.web.client.RestTemplate;
  * @createDate 2023-09-19 15:01:59
  */
 @Service
+@EnableFeignClients(
+        basePackages = "cn.surkaa.feign.client",
+        defaultConfiguration = FeignConfiguration.class
+)
 public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order>
         implements OrderService {
 

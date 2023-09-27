@@ -1,6 +1,6 @@
 package cn.surkaa.user.service.impl;
 
-import cn.surkaa.util.vo.UserVO;
+import cn.surkaa.feign.pojo.UserVO;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import cn.surkaa.user.domain.User;
 import cn.surkaa.user.service.UserService;

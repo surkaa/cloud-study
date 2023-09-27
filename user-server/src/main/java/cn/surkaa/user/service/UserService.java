@@ -1,7 +1,7 @@
 package cn.surkaa.user.service;
 
+import cn.surkaa.feign.pojo.UserVO;
 import cn.surkaa.user.domain.User;
-import cn.surkaa.util.vo.UserVO;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
