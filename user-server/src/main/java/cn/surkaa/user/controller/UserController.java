@@ -1,7 +1,7 @@
 package cn.surkaa.user.controller;
 
+import cn.surkaa.feign.pojo.UserVO;
 import cn.surkaa.user.service.UserService;
-import cn.surkaa.util.vo.UserVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;

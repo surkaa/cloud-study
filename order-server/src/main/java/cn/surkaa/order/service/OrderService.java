@@ -1,7 +1,7 @@
 package cn.surkaa.order.service;
 
+import cn.surkaa.feign.pojo.OrderWithUserVO;
 import cn.surkaa.order.domain.Order;
-import cn.surkaa.util.vo.OrderWithUserVO;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

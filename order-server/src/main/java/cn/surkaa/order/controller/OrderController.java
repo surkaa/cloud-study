@@ -1,9 +1,7 @@
 package cn.surkaa.order.controller;
 
+import cn.surkaa.feign.pojo.OrderWithUserVO;
 import cn.surkaa.order.service.OrderService;
-import cn.surkaa.util.ResultUtil;
-import cn.surkaa.util.vo.BaseVO;
-import cn.surkaa.util.vo.OrderWithUserVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

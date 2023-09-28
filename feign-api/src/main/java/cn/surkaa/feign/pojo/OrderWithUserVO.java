@@ -1,4 +1,4 @@
-package cn.surkaa.util.vo;
+package cn.surkaa.feign.pojo;
 
 import lombok.Data;
 
