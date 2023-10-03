@@ -21,5 +21,21 @@ spring:
             - Path=/user/**
         - id: order-service
           uri: lb://orderservice
-          predicates:
+          predicates: # 断言 参见: https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#gateway-request-predicates-factories
             - Path=/order/**
+            - After=2023-10-03T20:54:00+08:00[Asia/Shanghai] # 时间断言 在指定时间后才能访问
+          filters: # 过滤器 参见: https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#gatewayfilter-factories
+      globalcors: # 全局跨域配置
+        add-to-simple-url-handler-mapping: true # 解决options请求被拦截
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*" # 允许跨域的域名
+            allowedMethods: # 允许跨域的方法
+              - "GET"
+              - "POST"
+              - "PUT"
+              - "DELETE"
+              - "OPTIONS"
+            allowedHeaders: "*" # 允许跨域的请求头
+            allowCredentials: true # 允许携带cookie
+            maxAge: 36000 # 这次跨域检测的有效时间 单位秒
