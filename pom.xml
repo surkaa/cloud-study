@@ -11,6 +11,8 @@
     <description>study spring cloud demo</description>
 
     <modules>
+        <module>user-service</module>
+        <module>order-service</module>
     </modules>
 
     <packaging>pom</packaging>
