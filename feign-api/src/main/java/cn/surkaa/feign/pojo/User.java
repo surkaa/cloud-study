@@ -1,5 +1,6 @@
 package cn.surkaa.feign.pojo;
 
+import lombok.Builder;
 import lombok.Data;
 
 import java.util.Date;
@@ -8,6 +9,7 @@ import java.util.Date;
  * @author SurKaa
  */
 @Data
+@Builder
 public class User {
     private Long id;
     private String username;
