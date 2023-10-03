@@ -21,5 +21,7 @@ spring:
             - Path=/user/**
         - id: order-service
           uri: lb://orderservice
-          predicates:
+          predicates: # 断言 参见: https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#gateway-request-predicates-factories
             - Path=/order/**
+            - After=2023-10-03T20:54:00+08:00[Asia/Shanghai] # 时间断言 在指定时间后才能访问
+          filters: # 过滤器 参见: https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#gatewayfilter-factories
