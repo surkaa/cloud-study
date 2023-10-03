@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="UserApplication (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="user-service" />
+    <option name="PROGRAM_PARAMETERS" value="--server.port=8082 --spring.cloud.nacos.discovery.cluster-name=HangZhou" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="cn.surkaa.user.UserApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
