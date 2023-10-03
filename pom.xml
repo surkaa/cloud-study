@@ -11,12 +11,6 @@
     <description>study spring cloud demo</description>
 
     <modules>
-        <module>user-server</module>
-        <module>order-server</module>
-        <module>util</module>
-        <module>eureka-server</module>
-        <module>feign-api</module>
-        <module>gateway</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -32,57 +26,12 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-        <!-- dependency version -->
-        <mysql.version>8.0.23</mysql.version>
-        <mybatis-plus.version>3.5.3.1</mybatis-plus.version>
-        <hutool.version>5.8.20</hutool.version>
-        <spring-cloud.version>Hoxton.SR10</spring-cloud.version>
     </properties>
 
     <dependencyManagement>
-        <dependencies>
-            <!-- mybatis-plus -->
-            <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-boot-starter</artifactId>
-                <version>${mybatis-plus.version}</version>
-            </dependency>
-            <!-- spring cloud -->
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <!-- nacos -->
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>2.2.5.RELEASE</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <!-- mysql -->
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>${mysql.version}</version>
-            </dependency>
-        </dependencies>
     </dependencyManagement>
 
     <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-            <version>${hutool.version}</version>
-        </dependency>
     </dependencies>
 
 </project>
